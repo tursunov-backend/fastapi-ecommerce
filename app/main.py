@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-from .routers import router
+app = FastAPI()
 
-
-app = FastAPI(title="Ecommerce")
-app.include_router(router)
+@app.get("/")
+def root():
+    return {"status": "ok"}
